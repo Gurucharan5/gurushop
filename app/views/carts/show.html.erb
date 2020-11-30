@@ -1,0 +1,22 @@
+<div>
+	<%= link_to 'Keep Shopping',instruments_path,class:"btn btn-secondary" %>
+</div>
+
+<section>
+	<%= render (@cart.line_items)%>
+	<div>
+		<div>
+			<%= link_to 'Empty Cart',@instrument, method: :delete,data:{confirm: "Are you sure to delete cart"}, class:"btn btn-danger"%>
+		</div>
+		<div>
+			<h4>
+			<span>
+				Total:
+			</span>
+			<%= number_to_currency(@cart.total_price)%>
+		    </h4>
+		</div>
+	</div>
+	
+
+</section>

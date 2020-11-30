@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+<div class="show">
+<div class="left">
+<p>
+  <strong>Title:</strong>
+  <%= @instrument.title %>
+</p>
+<p>
+  <strong>Brand:</strong>
+  <%= @instrument.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @instrument.model %>
+</p>
+
+<div class="item-show">
+  <%= link_to image_tag(@instrument.image_url(:default)), @instrument %>
+
+</div>
+
+<p>
+  <strong>Description:</strong>
+  <%= @instrument.description %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @instrument.condition %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @instrument.color %>
+</p>
+
+
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@instrument.price) %>
+</p>
+</div>
+
+<div class="right">
+
+  
+  <strong>Price:</strong>
+  <%= number_to_currency(@instrument.price) %>
+
+
+
+
+<%= button_to 'Add to cart', line_items_path(instrument_id: @instrument), class:"btn btn-success"%>
+
+
+
+
+
+  
+</div>
+
+</div>
+
+<%= link_to 'Back', instruments_path %>
